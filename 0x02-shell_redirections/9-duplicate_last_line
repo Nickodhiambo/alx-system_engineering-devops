@@ -1,2 +1,2 @@
 #!/bin/bash
-printf %s\n $(tail -n 1 iacta) >> iacta
+tail -n 1 iacta > newfile.txt | cat newfile.txt >> iacta
