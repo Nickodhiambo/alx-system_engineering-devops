@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Uses internal field separator (IFS) with while loop to display
+#contents of the file /etc/passwd
+
+filename="/etc/passwd"
+
+while IFS=":" read -r username password uid gid user_info homedir shell; do
+	echo "The user $username is part of the $gid gang, lives in \
+$homedir and rides $shell. $uid's place is protected \
+by  the passcode $password, more info about the user here: $user_info"
+done < "$filename"
