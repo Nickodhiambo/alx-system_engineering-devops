@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Lists process IDs along with their names
+# Lists processes containing "Bash"
+#Does not use ps command
+
+pgrep -l bash
