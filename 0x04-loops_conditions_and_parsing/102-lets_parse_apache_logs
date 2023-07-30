@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Uses awk tp parse Apache log files
+# Displays user's IP and HTTPS status code
+
+awk -F' ' '{print $1, $9}' apache-access.log
