@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Connects to my server with private key without passphare
+
+ssh -i ~/.ssh/school ubuntu@18.214.87.31
