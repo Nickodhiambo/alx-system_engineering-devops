@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Configures an NGINX server to send custom page not found response
+
+sudo apt-get update
+sudo apt-get -y install nginx
+echo 'Hello World!' | sudo tee /var/www/html/index.html
+
+cat > /etc/nginx/sites-available/default <<EOL
+server {
+    listen 80;
+    server_name _;
+
+    location / {
+        root /var/www/html;
+    }
+
+    location /redirect_me {
+        return 301 https://youtube.com/watch?v=QH2-TGUlwu4;
+    }
+}
+EOL
+
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+sed -i '/server_name _;/a \
+\   
+    error_page 404 /404.html;' /etc/nginx/sites-available/default
+
+sudo service nginx restart
