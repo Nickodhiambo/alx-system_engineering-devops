@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Specifies an ubuntu user and displays the user using whoami command
+
+sudo -u "$1" whoami
