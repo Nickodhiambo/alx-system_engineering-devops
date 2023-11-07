@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 Contains a function that recursively calls a reddit API,
 retrieving all hot posts to a subreddit
